@@ -1,7 +1,7 @@
 import type { MuscleGroup } from './MuscleGroup'
 
 export type Exercise = {
-    id: number,
+    id: string,
     name: string,
     muscleGroup: MuscleGroup,
 }

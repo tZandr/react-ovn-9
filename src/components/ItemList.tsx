@@ -1,12 +1,13 @@
-import { exerciseData } from '../data/ExerciseData';
-import ItemCard from './ItemCard';
 import './ExerciseList.css';
+import { useExerciseStore } from '../store/exerciseStore';
+import ItemCard from './ItemCard';
 
-export default function exerciseList() {
+export default function ItemList() {
+  const exercises = useExerciseStore((state) => state.exercises);
+
   return (
     <div className="exercise-list">
-      <h2>Exercises</h2>
-      {exerciseData.map((exercise) => (
+      {exercises.map((exercise) => (
         <ItemCard key={exercise.id} exercise={exercise} />
       ))}
     </div>
